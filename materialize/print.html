@@ -1,82 +1,556 @@
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <link type = "text/css" rel="stylesheet" src ="css/style.css">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" src="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+    body{
+    background-color:#a7ffeb;
+    }
+    
+    
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+     font-size: 100%;
+    font: inherit;
+    vertical-align: baseline
+}
+
+body {
+    line-height: 1
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+caption,
+th,
+td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle
+}
+
+q,
+blockquote {
+    quotes: none
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+    content: "";
+    content: none
+}
+
+a img {
+    border: none
+}
+
+article {
+    display: block
+}
 
 
-    </head>
 
-    <body>
-    <ul id="slide-out" class="sidenav sidenav-fixed blue-grey darken-4">
-        <div class = "background black"> 
-            a <br/>
-            a <br/>
-            a <br/>
-            a <br/>
-            a <br/>
-            a <br/>
-            a <br/>
-            a <br/>
-            a <br/>
-            a <br/>
-            a <br/>
-            a <br/>
-                        </div>
-      <li><a href="#!"> <i class="small material-icons">home</i>Home</a></li>
-      <li><a href="print.html"><i class="small material-icons ">local_printshop</i>Print</a></li>
-      <li><a href="#!"><i class="small material-icons">account_circle</i>Account</a></li>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 12px 0
+}
+
+span {
+    margin: 35px 0 5px;
+    font-size: 26px;
+    font-weight: normal;
+    color: #fff
+}
+
+#slider {
+    text-align: center
+}
+
+h2 {
+    margin: 40px 0 25px;
+    border-bottom: 1px solid #bbb;
+    padding: 0 0 10px
+}
+
+p {
+    margin: 20px 0 16px
+}
+
+strong {
+    font-weight: bold
+}
+
+label,
+a {
+    color: brown;
+    cursor: pointer;
+    text-decoration: none;
+    font-style: italic
+}
+
+label:hover,
+a:hover {
+    color: #ddd!important
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+label,
+#active,
+img {
+    -moz-user-select: none;
+    -webkit-user-select: none
+}
+
+.catch {
+    display: block;
+    height: 0;
+    overflow: hidden
+}
+
+#slider {
+    margin: 0 auto
+}
+
+input {
+    display: none
+}
+
+#slide1:checked ~ #slides .inner {
+    margin-left: 0
+}
+
+#slide2:checked ~ #slides .inner {
+    margin-left: -100%
+}
+
+#slide3:checked ~ #slides .inner {
+    margin-left: -200%
+}
+
+#slide4:checked ~ #slides .inner {
+    margin-left: -300%
+}
+
+#slide5:checked ~ #slides .inner {
+    margin-left: -400%
+}
+
+#container {
+    width: 100%;
+    overflow: hidden
+}
+
+article img {
+    width: 100%
+}
+
+#slides .inner {
+    width: 500%;
+    line-height: 0
+}
+
+#slides article {
+    width: 20%;
+    float: left
+}
+
+#commands {
+    margin: -25% 0 0 0;
+    width: 100%;
+    height: 50px
+}
+
+#commands label {
+    display: none;
+    width: 80px;
+    height: 80px;
+    opacity: 0.5
+}
+
+#commands label:hover {
+    opacity: 0.8
+}
+
+#active {
+    position: relative;
+    z-index: 5;
+    margin: 16% 0 0;
+    text-align: center
+}
+
+#active label {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #bbb
+}
+
+#active label:hover {
+    background: #333;
+    border-color: #777!important
+}
+
+#slide1:checked ~ #commands label:nth-child(2),
+#slide2:checked ~ #commands label:nth-child(3),
+#slide3:checked ~ #commands label:nth-child(4),
+#slide4:checked ~ #commands label:nth-child(5),
+#slide5:checked ~ #commands label:nth-child(1) {
+    background: url('https://0.s3.envato.com/files/84450220/img/next.png') no-repeat;
+    float: right;
+    margin: 0 12px 0 0;
+    display: block
+}
+
+#slide1:checked ~ #commands label:nth-child(5),
+#slide2:checked ~ #commands label:nth-child(1),
+#slide3:checked ~ #commands label:nth-child(2),
+#slide4:checked ~ #commands label:nth-child(3),
+#slide5:checked ~ #commands label:nth-child(4) {
+    background: url('https://0.s3.envato.com/files/84450220/img/previous.png') no-repeat;
+    float: left;
+    margin: 0 0 0 -6px;
+    display: block
+}
+
+#slide1:checked ~ #active label:nth-child(1),
+#slide2:checked ~ #active label:nth-child(2),
+#slide3:checked ~ #active label:nth-child(3),
+#slide4:checked ~ #active label:nth-child(4),
+#slide5:checked ~ #active label:nth-child(5) {
+    background: #000;
+    opacity: 0.6;
+    border-color: #fff!important;
+    border: 2px solid #fff
+}
+
+.caption {
+    line-height: 20px;
+    margin: 0 0 -150%;
+    position: absolute;
+    padding:  12px;
+    opacity: 0;
+    color: #fff;
+    text-transform: none;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 18px
+}
+
+.caption bar {
+    display: inline-block;
+    padding: 10px;
+    background: #000;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    opacity: 0.7;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70)
+}
+
+#slides {
+    position: relative;
+    padding: 2px;
+    border: 1px solid #ddd;
+    margin: 45px 0 0;
+    background: #FFF;
+    background: -webkit-linear-gradient(#FFF, #FFF 20%, #EEE 80%, #DDD);
+    background: -moz-linear-gradient(#FFF, #FFF 20%, #EEE 80%, #DDD);
+    background: -ms-linear-gradient(#FFF, #FFF 20%, #EEE 80%, #DDD);
+    background: -o-linear-gradient(#FFF, #FFF 20%, #EEE 80%, #DDD);
+    background: linear-gradient(#FFF, #FFF 20%, #EEE 80%, #DDD);
+    -webkit-border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    border-radius: 2px 2px 2px 2px;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2)
+}
+
+#slides .inner {
+    -webkit-transform: translateZ(0);
+    -webkit-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    -moz-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    -ms-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    -o-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    -webkit-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    -moz-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    -ms-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    -o-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000)
+}
+
+#slider {
+    -webkit-transform: translateZ(0);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out
+}
+
+#commands label {
+    -webkit-transform: translateZ(0);
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out
+}
+
+#slide1:checked ~ #slides article:nth-child(1) .caption,
+#slide2:checked ~ #slides article:nth-child(2) .caption,
+#slide3:checked ~ #slides article:nth-child(3) .caption,
+#slide4:checked ~ #slides article:nth-child(4) .caption,
+#slide5:checked ~ #slides article:nth-child(5) .caption {
+    opacity: 1;
+    -webkit-transition: all 1s ease-out 0.6s;
+    -moz-transition: all 1s ease-out 0.6s;
+    -o-transition: all 1s ease-out 0.6s;
+    transition: all 1s ease-out 0.6s
+}
+
+#commands,
+#commands label,
+#slides,
+#active,
+#active label {
+    -webkit-transform: translateZ(0);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out
+}
+
+#slider {
+    max-width: 960px
+}
+
+@media only screen and (max-width:850px) and (min-width:450px) {
+    #slider #commands {
+        margin: -25% 0 0 5%;
+        width: 90%;
+        height: 50px
+    }
+    #slider #commands label {
+        -moz-transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        -o-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9)
+    }
+    #slider #slides .caption {
+        padding: 280px 12px
+    }
+    #slider #slides {
+        padding: 2px 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0
+    }
+    #slider #active {
+        margin: 15% 0 0
+    }
+}
+
+@media only screen and (max-width:450px) {
+    #slider #commands {
+        margin: -28% 0 0 1%;
+        width: 100%;
+        height: 70px
+    }
+    #slider #active {
+        margin: 12% 0 0
+    }
+    #slider #slides {
+        padding: 2px 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0
+    }
+    #slider #slides .caption {
+        opacity: 0!important
+    }
+    #slider #commands label {
+        -moz-transform: scale(0.7);
+        -webkit-transform: scale(0.7);
+        -o-transform: scale(0.7);
+        -ms-transform: scale(0.7);
+        transform: scale(0.7)
+    }
+}
+
+@media only screen and (min-width:850px) {
+    body {
+        padding: 0 80px
+    }
+}
+
+    </style>
+
+</head>
+
+<body>
+   
+   
+    <ul id="slide-out" class="sidenav sidenav-fixed #64b5f6 blue lighten-2">
+        <div class="background black">
+            a <br/> a <br/> a <br/> a <br/> a <br/> a <br/> a <br/> a <br/> a <br/> a <br/> a <br/> a <br/>
+        </div>
+        <li><a href="#!"> <i class="small material-icons">home</i>Home</a></li>
+        <li><a href="print.html"><i class="small material-icons ">local_printshop</i>Print</a></li>
+        <li><a href="#!"><i class="small material-icons">account_circle</i>Account</a></li>
 
     </ul>
     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
-          
-<div class = "row">
     
-    <div class = "input-field col m4 s12 offset-m2">
-  <input id = "date" type="text" class="datepicker">
-        <label for="date">Date</label>
+    <!-- Start of Image Slider-->
+    
+    
+    
+        <article id="slider" style="padding-left: 25%">
+        <div>
+         <h1>Follow These Steps</h1>
         </div>
-    <div class = "input-field col m4 s12">
-        <input id = "pickupTime" type = "text" class = "timepicker">
-        <label for = "pickupTime">Pickup Time</label>
-    </div>
-    <div class = "file-field input-field col m4 s12 offset-m4">
-        <div class ="btn">
-            <span>File</span>
-            <input type = "file">
-        </div>
-        <div class = "file-path-wrapper">
-        <input class = "file-path validate" type="text">
-        </div>
+        <input checked type='radio' name='slider' id='slide1' />
+        <input type='radio' name='slider' id='slide2' />
+        <input type='radio' name='slider' id='slide3' />
+        <input type='radio' name='slider' id='slide4' />
+        <input type='radio' name='slider' id='slide5' />
+        <div id="slides">
+            <div id="container">
+                <div class="inner">
+                    <article>
+                            <div class='caption'>
+                            <bar>Select date of pickup</bar>
+                        </div>
+                        <img src="./images/SelectDate.png" />
+                    </article>
+                    <article>
+                        <div class='caption'>
+                            <bar>Select time of pickup</bar>
+                        </div>
+                        <img src="./images/SelectTime.png" />
+                    </article>
+                    <article>
+                        <div class='caption'>
+                            <bar>Select your file to be printed</bar>
+                        </div>
+                        <img src="./images/SelectFile.png" />
+                    </article>
+                    <article>
+                        <div class='caption'>
+                            <bar>Upload</bar>
+                        </div>
+                        <img src="./images/UploadFile.png" />
+                    </article>
+                    <article>
+                        <div class='caption'>
+                            <bar>Pick it up</bar>
+                        </div>
+                        <img src="./images" />
+                    </article>                                                            
 
-        <div class = "waves-effect waves-light btn-small">
-            <span>Upload</span>
-        </div>
                 </div>
+            </div>
+        </div>
+        <div id="commands">
+            <label for='slide1'></label>
+            <label for='slide2'></label>
+            <label for='slide3'></label>
+            <label for='slide4'></label>
+            <label for='slide5'></label>
+        </div>
+        <div id="active">
+            <label for='slide1'></label>
+            <label for='slide2'></label>
+            <label for='slide3'></label>
+            <label for='slide4'></label>
+            <label for='slide5'></label>
+        </div>
+    </article>
+    
 
-</div>
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type = "text/javascript" src="js/materialize.js"></script>
-        <script>
-            $( document ).ready(function(){
-                 $('.dropdown-trigger').dropdown();
-            });
-              $(document).ready(function(){
-    $('.datepicker').datepicker();
-  });
-            
-              $(document).ready(function(){
-    $('.timepicker').timepicker();
-  });
-            
-              $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-        </script>
-    </body>
-  </html>
+    
+    <!-- end of image slider-->
+
+    <div class="row" style="padding:5% 0% 0% 25%;" >
         
+
+        <div class="input-field col m4 s12 offset-m2" style="align-items: center;" >           
+            <input id="date" type="text" class="datepicker" >
+            <label for="date">Date</label>
+        </div>
+        
+        <div class="input-field col m4 s12" style="align-content: center;">
+            <input id="pickupTime" type="text" class="timepicker">
+            <label for="pickupTime">Pickup Time</label>
+        </div>
+        <div class="file-field input-field col m4 s12 offset-m4">
+            <div class="btn">
+                <span>File</span>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="waves-effect waves-light btn-small">
+                <span>Upload</span>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.dropdown-trigger').dropdown();
+        });
+        $(document).ready(function() {
+            $('.datepicker').datepicker();
+        });
+
+        $(document).ready(function() {
+            $('.timepicker').timepicker();
+        });
+
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+        });
+    </script>
+</body>
+
+</html>
