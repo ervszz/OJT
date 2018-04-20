@@ -9,8 +9,18 @@
 
 <style>
     body{
-    background-color:#a7ffeb;
+    background-image:url(images/background.png)
     }
+    
+    .parallax {
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
     
     
 video {
@@ -408,34 +418,56 @@ article img {
         transform: scale(0.7)
     }
 }
-
-@media only screen and (min-width:850px) {
-    body {
-        padding: 0 80px
-    }
+    
+    .parallax {
+    /* The image used */
+    background-image:url(images/background.png);
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
     </style>
 
 </head>
 
-<body style="background-image:url(images/background.png)">
-   
-   
-    <ul id="slide-out" class="sidenav sidenav-fixed #64b5f6 blue lighten-2">
-        <div style="background-image:url(images/chari.png)">
-             <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>
-        </div>
-        <li><a href="#!"> <i class="small material-icons">home</i>Home</a></li>
-        <li><a href="print.html"><i class="small material-icons ">local_printshop</i>Print</a></li>
-        <li><a href="#!"><i class="small material-icons">account_circle</i>Account</a></li>
+<body>
+    <h2 style="font-size:50px"><font face="courier new">Home</font></h2>    
+    <div class="parallax"></div>
 
-    </ul>
-    <div class="row" style="padding:7.3% 0% 0% 15%;" >
-    <div class="col s12 m12" style="border-bottom:2px solid gray">
-        <h1><font face="Georgia" size="50px">Home</font></h1>
-	</div>	
-    </div>  
+<div style="height:280px;background-color:Beige; font-size:20px; text-align:center">
+<p> How it works:<br>
+       <br>
+       <br>
+    Step 1:<br> 
+    <br>
+    Step 2:<br>
+    <br>
+    Step 3:<br>
+    <br>
+    Step 4:<br>
+    <br>
+    Step 5:<br>
+</p>
+</div>
+
+<div class="parallax"></div>
+   
+<div style="height:200px;background-color:gray;font-size:36px">
+Scroll Up and Down this page to see the parallax scrolling effect.
+This div is just here to enable scrolling.
+Tip: Try to remove the background-attachment property to remove the scrolling effect.
+</div>
+
+<div class="parallax"></div>
+   <div style="height:200px;background-color:gray;font-size:36px">
+Scroll Up and Down this page to see the parallax scrolling effect.
+This div is just here to enable scrolling.
+Tip: Try to remove the background-attachment property to remove the scrolling effect.
+</div>
+
+<div class="parallax"></div>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/materialize.js"></script>
