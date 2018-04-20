@@ -13,95 +13,20 @@
     }
     
     
-video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-     font-size: 100%;
-    font: inherit;
-    vertical-align: baseline
-}
-
-body {
-    line-height: 1
-}
-
-ol,
-ul {
-    list-style: none
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0
-}
-
-caption,
-th,
-td {
-    text-align: left;
-    font-weight: normal;
-    vertical-align: middle
-}
-
-q,
-blockquote {
-    quotes: none
-}
-
-q:before,
-q:after,
-blockquote:before,
-blockquote:after {
-    content: "";
-    content: none
-}
-
-a img {
-    border: none
-}
-
-article {
-    display: block
-}
 
 
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: bold;
-    font-size: 16px;
-    margin: 12px 0
-}
 
-span {
-    margin: 35px 0 5px;
-    font-size: 26px;
-    font-weight: normal;
-    color: #fff
-}
+
+    .main{
+        padding-left:300px;
+    }
+
 
 #slider {
     text-align: center
 }
 
-h2 {
-    margin: 40px 0 25px;
-    border-bottom: 1px solid #bbb;
-    padding: 0 0 10px
-}
-
-p {
-    margin: 20px 0 16px
-}
-
-strong {
-    font-weight: bold
-}
 
 label,
 a {
@@ -352,7 +277,7 @@ article img {
 }
 
 #slider {
-    max-width: 960px
+    max-width: 900px
 }
 
 @media only screen and (max-width:850px) and (min-width:450px) {
@@ -409,9 +334,9 @@ article img {
     }
 }
 
-@media only screen and (min-width:850px) {
-    body {
-        padding: 0 80px
+@media only screen and (min-width:992px) {
+    .main {
+        padding: 0;
     }
 }
 
@@ -436,8 +361,8 @@ article img {
     <!-- Start of Image Slider-->
     
     
-    
-        <article id="slider" style="padding-left: 25%">
+<div class = "main">
+        <article id="slider">
         <div>
          <h1>Follow These Steps</h1>
         </div>
@@ -503,9 +428,7 @@ article img {
     
     <!-- end of image slider-->
 
-    <div class="row" style="padding:5% 0% 0% 25%;" >
-        
-
+    <div class="row" >
         <div class="input-field col m4 s12 offset-m2" style="align-items: center;" >           
             <input id="date" type="text" class="datepicker" >
             <label for="date">Date</label>
@@ -532,25 +455,7 @@ article img {
         </div>
 
     </div>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/materialize.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.dropdown-trigger').dropdown();
-        });
-        $(document).ready(function() {
-            $('.datepicker').datepicker();
-        });
-
-        $(document).ready(function() {
-            $('.timepicker').timepicker();
-        });
-
-        $(document).ready(function() {
-            $('.sidenav').sidenav();
-        });
-    </script>
+    </div>
 </body>
 
 </html>
