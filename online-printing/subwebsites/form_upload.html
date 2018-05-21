@@ -1,0 +1,51 @@
+<form action="./subwebsites/upload.php" method="POST" enctype='multipart/form-data'>
+    <div class="file-field input-field">
+        <div class="btn">
+            <span>File</span>
+            <input type="file" name="fileupload">
+        </div>
+        <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" required>
+        </div>
+    </div>
+    <p>
+        <label>
+            <input class="with-gap" name="group1" value = "Short" type="radio" required />
+            <span>Short</span>
+        </label>
+        <label>
+            <input class="with-gap" name="group1" value = "A4" type="radio" />
+            <span>A4</span>
+        </label>
+        <label>
+            <input class="with-gap" name="group1" value = "Long" type="radio" />
+            <span>Long</span>
+        </label>
+        <label>
+            <input class="with-gap" name="group1" value = "Legal" type="radio" />
+            <span>Legal</span>
+        </label>
+    </p>
+
+    <p>
+        <label>
+            <input class="with-gap" name="group2" type="radio" value = "Colored" required/>
+            <span>Colored</span>
+        </label>
+        <label>
+            <input class="with-gap" name="group2" type="radio" value = "Not Colored"/>
+            <span>Not Colored</span>
+        </label>
+    </p>
+    <br>
+    <div class="input-field">
+        <input name = "date" type="text" class="datepicker" required>
+        <label for = "date">Pickup Date</label>
+    </div>
+
+    <div class="input-field">
+        <input name = "time" type="text" class="timepicker" required>
+        <label for = "time">Pickup Time</label>
+    </div>
+    <button type="submit" name = "upload">Send</button>
+</form>
