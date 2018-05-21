@@ -10,12 +10,17 @@
     $stmt->bind_param("s", $userName);
     $stmt->execute();
     $stmt->bind_result($id, $data, $fileName, $size, $type, $upload_status, $date, $time, $user_name);
-    echo "<h5> Not yet Printed </h5>";
+    echo "<ul class='collapsible'>";
+    echo "<li><div class='collapsible-header'><h5> Not yet Printed </h5></div>
+        <div class='collapsible-body'><span>Trial</span></div> <li>";
+
+    echo "</ul>";
 
     while($stmt->fetch()){ 
         $ctr++;
         ?>
-        <li class = "collection-item avatar">
+        
+           <li class = "collection-item avatar">
             <a href = "./subwebsites/download.php?id=<?php echo $id ?>" class = "collection-item">
                 <i class = "material-icons circle">folder</i>
                 <span class = "title"><?php echo $ctr ?></span>
