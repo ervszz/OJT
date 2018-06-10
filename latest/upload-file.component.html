@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+
+<div class="row">
+    <form [formGroup]="forms" (ngSubmit)="addPost(forms.value)" class = "col m10 s12 offset-m1">
+        <div class="file-field input-field">
+            <div class="btn black">
+                <span>File</span>
+                <!-- <input type="file" formControlName="fileupload" #fileupload (change)="addFile(fileupload.files)"> -->
+                <input type="file" formControlName="fileupload" (change)="addFile($event)" #fileinput>
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" required>
+            </div>
+        </div>
+        <!-- Start -->
+        <div class="col s6">
+            <br>
+
+            <input class="with-gap" formControlName="group1" type="radio" id="test1" [(ngModel)]="radioButtonValue" [value]="1" />
+            <label for="test1">Short</label>
+
+            <input class="with-gap" formControlName="group1" type="radio" id="test2" [(ngModel)]="radioButtonValue" [value]="2" />
+            <label for="test2">A4</label>
+
+            <input class="with-gap" formControlName="group1" type="radio" id="test3" [(ngModel)]="radioButtonValue" [value]="3" />
+            <label for="test3">Long</label>
+
+            <input class="with-gap" formControlName="group1" type="radio" id="test4" [(ngModel)]="radioButtonValue" [value]="4" />
+            <label for="test4">Legal</label>
+
+        </div>
+
+        <div class="input-field col s6">
+            <select formControlName="group2" [(ngModel)]="selectedOption" name="selectedOption" materialize="material_select" [materializeSelectOptions]="selectOptions" [disabled]="isDisabled?true:null">
+              <option [value]="A">Colored</option>
+              <option [value]="B">Not Colored</option>
+            </select>
+          </div>
+        <!-- End -->
+
+        <div class="row">
+            <div class="col s6">
+                <label for="birthdate">Pickup Date {{birthDate}}</label>
+                <input formControlName="date" id="birthdate" [(ngModel)]="birthDate" materialize="pickadate" [materializeActions]="birthDateActions"
+                    [materializeParams]="[{format: 'dd/mm/yyyy'}]" placeholder = "dd/mm/yyyy" type="text" />
+            </div>
+
+            <div class="col s6">
+                <label for="birthtime">Pickup Time {{birthTime}}</label>
+                <input id="birthtime" formControlName="time" [(ngModel)]="birthTime" materialize="pickatime" [materializeActions]="birthTimeActions"
+                    [materializeParams]="[{twelvehour: false}]" placeholder="00:00" class="validate" type="text">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <a class="waves-effect waves-light btn black" (click)="openDatePicker()">Open Date Picker</a>
+            </div>
+
+            <div class="col s6">
+                <a class="waves-effect waves-light btn black" (click)="openTimePicker()">Open Time Picker</a>
+            </div>
+        </div>
+
+
+        <button class="waves-effect waves-light btn blue" type="submit" [disabled]="!forms.valid">Send</button>
+    </form>
+</div>
