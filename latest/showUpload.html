@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ShowUpload</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+
+
+    </script>
+</head>
+
+<body class="container" background="2.png">
+
+    <div class="row">
+        <div class="col s12">
+
+            <ul id="tabs-swipe-demo" class="tabs">
+                <li class="tab col s12 white-text text-darken-2"><a href="#Not-Yet-Paid">Not yet Printed</a></li>
+                <li class="tab col s12"><a href="#Printed">Printed</a></li>
+                <li class="tab col s12"><a href="#Paid">Paid</a></li>
+                <li class="tab col s12"><a href="#cancelled">Cancelled</a></li>
+                <li class="tab col s12"><a href="#Register">Register</a></li>
+            </ul>
+        </div>
+        <!-- Start of not yet Printed-->
+        <div id="Not-Yet-Paid" class="col s12 pink-text text-darken-2 ">
+
+            <table class="responsive-table">
+                <thead>
+                    <tr>
+                        <th>File Name</th>
+                        <th>Pickup Date</th>
+                        <th>Pickup Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Project</td>
+                        <td>12-06-2018</td>
+                        <td>4:00pm</td>
+                        <td>
+                            <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                            <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ThesisRev1</td>
+                        <td>12-06-2018</td>
+                        <td>4:30pm</td>
+                        <td>
+                            <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                            <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Documentation</td>
+                        <td>12-01-2018</td>
+                        <td>6:00pm</td>
+                        <td>
+                            <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                            <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>File4</td>
+                        <td>12-01-2018</td>
+                        <td>9:00am</td>
+                        <td>
+                            <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                            <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- end of not yet Printed-->
+
+        <!-- start of printed-->
+        <div id="Printed" class="col s12 pink-text text-darken-2">
+            <table class="highlight">
+                <thead>
+                    <tr>
+                        <th>File Name</th>
+                        <th>Pickup Date</th>
+                        <th>Pickup Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>File1</td>
+                        <td>12-06-2018</td>
+                        <td>4:00pm</td>
+                        <td>
+                            <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                            <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>File2</td>
+                        <td>12-06-2018</td>
+                        <td>4:30pm</td>
+                        <td>
+                            <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                            <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>File3</td>
+                        <td>12-01-2018</td>
+                        <td>6:00pm</td>
+                        <td>
+                            <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                            <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- end of printed-->
+        <!-- start of paid-->
+        <div id="Paid" class="col s12 ">
+            <div id="Printed" class="col s12 pink-text text-darken-2">
+                <table class="centered">
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Resume</td>
+
+                            <td>
+                                <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                                <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Grades</td>
+
+                            <td>
+                                <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                                <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Report</td>
+
+                            <td>
+                                <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                                <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- end of paid-->
+        <div id="cancelled" class="col s12 pink-text text-darken-2 ">
+            <table class="centered">
+                <thead>
+                    <tr>
+                        <th>File Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Presentation</td>
+
+                        <td>
+                            <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                            <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>WebTek</td>
+
+                        <td>
+                            <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                            <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>IAS</td>
+
+                        <td>
+                            <a class="btn waves-effect waves-light blue btn-small" href="http://localhost/online-printing/download.php?id={{file.id}}">Download</a>
+                            <button class="btn waves-effect waves-light #757575 grey darken-1" type="submit" (click)="cancelUpload(file.id)">Cancel</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- start of Register -->
+        <div id="Register" class="col s12 pink-text text-darken-2 ">
+
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">security</i>
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="icon_telephone" type="tel" class="validate">
+                            <label for="icon_telephone">Telephone</label>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+
+                </form>
+            </div>
+
+        </div>
+
+        <!-- end of Register -->
+
+
+
+    </div>
+</body>
+
+</html>
